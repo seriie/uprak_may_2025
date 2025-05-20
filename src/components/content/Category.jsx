@@ -2,6 +2,7 @@ import codeIcon from '../../assets/icon/code.png';
 import ethernetIcon from '../../assets/icon/ethernet.png';
 import listIcon from '../../assets/icon/list.png';
 import CategoryCard from './Category-card';
+import Heading from './Heading';
 
 export default function Category() {
     const cardItems = [
@@ -12,12 +13,8 @@ export default function Category() {
 
     return (
         <>
-            <div className="gap-2 flex flex-col">
-                <h2 className="font-bold text-teal-500">KATEGORI</h2>
-                <h1 className="text-3xl font-bold text-slate-100">Mau belajar apa hari ini?</h1>
-                <p className="text-slate-300">Temukan tutorial berdasarkan minatmu.</p>
-            </div>
-            <div className='flex flex-warp w-full justify-between mt-8'>
+            <Heading subTitle="KATEGORI" title="Mau belajar apa hari ini?" desc="Temukan tutorial berdasarkan minatmu." />
+            <div className='flex flex-wrap w-full justify-between mt-8'>
                 {cardItems.map((item) => (
                     <CategoryCard item={item} />
                 ))}
