@@ -1,6 +1,6 @@
-import codeIcon from '../../assets/icon/code.png';
-import ethernetIcon from '../../assets/icon/ethernet.png';
-import listIcon from '../../assets/icon/list.png';
+import codeIcon from '../../assets/icon/content/code.png';
+import ethernetIcon from '../../assets/icon/content/ethernet.png';
+import listIcon from '../../assets/icon/content/list.png';
 import CategoryCard from './Category-card';
 import Heading from './Heading';
 

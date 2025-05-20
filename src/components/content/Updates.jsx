@@ -1,36 +1,64 @@
 import { useEffect, useState } from "react";
 import Heading from "./Heading";
 import UpdateCard from "./Updates-card";
-import axios from 'axios';
+import axios from "axios";
+import ReactPaginate from "react-paginate";
 
 export default function Updates() {
-    const [data, setData] = useState([]);
-    const URL = import.meta.env.VITE_API_URL;
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 8;
+  const URL = import.meta.env.VITE_API_URL;
 
+  useEffect(() => {
     const getContent = async () => {
-        try {
-            const response = await axios.get(`${URL}`);
-            console.log(response.data);
-            setData(response.data);
-        } catch (e) {
-            console.error("Error get data: ", e);   
-        }
-    }
+      try {
+        const response = await axios.get(`${URL}`);
+        setData(response.data);
+      } catch (e) {
+        console.error("Error get data: ", e);
+      }
+    };
+    getContent();
+  }, []);
 
-    useEffect(() => {
-        getContent();
-    }, []);
+  const offset = currentPage * itemsPerPage;
+  const currentItems = data.slice(offset, offset + itemsPerPage);
+  const pageCount = Math.ceil(data.length / itemsPerPage);
 
-    return (
-        <>
-            <div className="mt-10">
-                <Heading subTitle="UPDATE" title="Apa yang baru di Petani Kode? 🔥" desc="Baca artikel terbaru yang masih fresh dan hangat." />
-                <div className="mt-8 flex flex-wrap justify-center gap-10">
-                    {data.map((item) => (
-                        <UpdateCard item={item} />
-                    ))}
-                </div>
-            </div>
-        </>
-    )
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  return (
+    <div className="mt-10">
+      <Heading
+        subTitle="UPDATE"
+        title="Apa yang baru di Petani Kode? 🔥"
+        desc="Baca artikel terbaru yang masih fresh dan hangat."
+      />
+
+      <div className="mt-8 flex flex-wrap justify-center gap-10">
+        {currentItems.map((item) => (
+          <UpdateCard key={item.id} item={item} />
+        ))}
+      </div>
+
+      <div className="mt-10 flex justify-center">
+        <ReactPaginate
+          pageCount={pageCount}
+          onPageChange={handlePageClick}
+          containerClassName="flex gap-2"
+          pageClassName="px-3 py-1 rounded bg-slate-700 text-white"
+          activeClassName="bg-teal-500 font-bold"
+          previousLabel={"←"}
+          nextLabel={"→"}
+          previousClassName="px-3 py-1 bg-slate-600 text-white rounded"
+          nextClassName="px-3 py-1 bg-slate-600 text-white rounded"
+          disabledClassName="opacity-50 cursor-not-allowed"
+          className="cursor-pointer flex gap-2"
+        />
+      </div>
+    </div>
+  );
 }

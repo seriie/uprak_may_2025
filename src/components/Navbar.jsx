@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import icon from '../assets/icon/icon.png';
-import homeIcon from '../assets/icon/home.png';
-import videoPlayerIcon from '../assets/icon/video-player.png';
-import pepperIcon from '../assets/icon/papper.png';
-import bookIcon from '../assets/icon/book.png';
-import discordIcon from '../assets/icon/discord.png';
-import searchIcon from '../assets/icon/search.png';
+import icon from '../assets/icon/navbar/icon.png';
+import homeIcon from '../assets/icon/navbar/home.png';
+import videoPlayerIcon from '../assets/icon/navbar/video-player.png';
+import pepperIcon from '../assets/icon/navbar/papper.png';
+import bookIcon from '../assets/icon/navbar/book.png';
+import discordIcon from '../assets/icon/navbar/discord.png';
+import searchIcon from '../assets/icon/navbar/search.png';
 
 export default function Navbar() {
     const navIcon = [
@@ -27,16 +27,16 @@ export default function Navbar() {
                     <img src={icon} className='w-8 h-8' />
                     <div className='flex item-center gap-4'>
                         {navIcon.map((item) => (
-                            <div key={item.id} className='flex gap-1 items-center p-2 hover:bg-teal-700 cursor-pointer rounded-md'>
+                            <button key={item.id} className='flex focus:outline-teal-500 gap-1 items-center p-2 hover:bg-teal-700 cursor-pointer rounded-md'>
                                 <img src={item.icon} alt={item.name} className='w-4 h-4' />
                                 <p className='text-slate-100 font-bold'>{item.name}</p>
-                            </div>
+                            </button>
                         ))}
                     </div>
                 </div>
                 <div className='flex items-center gap-4'>
                     <img src={searchIcon} className='w-6 h-6' />
-                    <button className='text-slate-100 p-2 rounded-md font-medium bg-teal-500 hover:bg-teal-700 cursor-pointer'>Join Newsletter</button>
+                    <button className='text-slate-100 p-2 rounded-md focus:outline-teal-300 bg-teal-500 hover:bg-teal-700 cursor-pointer'>Join Newsletter</button>
                 </div>
             </div>
         </>
