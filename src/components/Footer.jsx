@@ -1,10 +1,9 @@
 import footerIcon from "../assets/icon/footer/footer-icon.png";
-import facebokIcon from "../assets/icon/footer/facebook.png";
+import facebookIcon from "../assets/icon/footer/facebook.png";
 import twitterIcon from "../assets/icon/footer/twitter.png";
 import telegramIcon from "../assets/icon/footer/telegram.png";
 import instagramIcon from "../assets/icon/footer/instagram.png";
 import youtubeIcon from "../assets/icon/footer/youtube.png";
-import clsx from 'clsx';
 
 export default function Footer() {
   const footerLinks = [
@@ -40,7 +39,7 @@ export default function Footer() {
 
   const itemIcon = [
     {
-      icon: facebokIcon,
+      icon: facebookIcon,
       name: "Facebook",
       background: "hover:bg-blue-800",
       link: "https://facebook.com/petanikode",
