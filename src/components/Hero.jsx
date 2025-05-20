@@ -1,7 +1,7 @@
 export default function Hero() {
     return (
         <>
-            <div className="bg-slate-800 py-20 px-20 flex items-center">
+            <div className="bg-slate-800 py-20 px-20 flex justify-center flex-wrap-reverse items-center">
                 <div className="w-2xl">
                     <h1 className="text-slate-100 font-bold text-5xl">Petani Kode</h1>
                     <p className="text-slate-100 font-light text-2xl">Belajar budidaya kode (coding) dengan tutorial yang mudah dipahami. Mostly pakai Linux.</p>
