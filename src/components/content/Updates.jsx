@@ -50,15 +50,15 @@ export default function Updates() {
         <ReactPaginate
           pageCount={pageCount}
           onPageChange={handlePageClick}
-          containerClassName="flex gap-2"
-          pageClassName={`px-3 py-1 rounded ${theme === "dark" ? 'bg-slate-700 text-slate-100' : 'bg-slate-300 text-slate-800'}`}
+          containerClassName="flex flex-col"
+          pageClassName={`px-2 py-1 md: px-3 rounded ${theme === "dark" ? 'bg-slate-700 text-slate-100' : 'bg-slate-300 text-slate-800'}`}
           activeClassName="bg-teal-500 font-bold"
           previousLabel={"←"}
           nextLabel={"→"}
-          previousClassName={`px-3 py-1 ${theme === "dark" ? 'bg-slate-600 text-slate-100' : 'bg-slate-400 text-slate-800'} rounded`}
-          nextClassName={`px-3 py-1 ${theme === "dark" ? 'bg-slate-600 text-slate-100' : 'bg-slate-400 text-slate-800'} rounded`}
+          previousClassName={`px-2 md:px-3 md:py-1 ${theme === "dark" ? 'bg-slate-600 text-slate-100' : 'bg-slate-400 text-slate-800'} rounded`}
+          nextClassName={`px-2 py-1 md:px-3 ${theme === "dark" ? 'bg-slate-600 text-slate-100' : 'bg-slate-400 text-slate-800'} rounded`}
           disabledClassName="opacity-50 cursor-not-allowed"
-          className="cursor-pointer flex gap-2"
+          className={`cursor-pointer flex gap-1 md:gap-2 ${theme === "dark" ? 'text-slate-100' : 'text-slate-800'}`}
         />
       </div>
     </div>
