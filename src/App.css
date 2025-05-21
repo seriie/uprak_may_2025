@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
 * {
-    font-family: 'Roboto';
-    transition: background-color 0.1s, color 0.1s;
+  transition: background-color 0.1s, color 0.1s;
 }
