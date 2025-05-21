@@ -20,7 +20,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className={`${theme === "dark" ? 'bg-teal-600' : 'bg-teal-800'} z-10 px-10 py-2 fixed top-0 right-0 left-0 items-center flex justify-between w-full`}>
+            <div className={`${theme === "dark" ? 'bg-teal-800' : 'bg-teal-600'} z-10 px-10 py-2 fixed top-0 right-0 left-0 items-center flex justify-between w-full`}>
                 <div className='flex items-center gap-4'>
                     <img src={icon} className='w-8 h-8' />
                     <div className='flex item-center gap-4'>

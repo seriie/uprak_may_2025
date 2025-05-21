@@ -14,7 +14,7 @@ export default function Category() {
     return (
         <>
             <Heading subTitle="KATEGORI" title="Mau belajar apa hari ini?" desc="Temukan tutorial berdasarkan minatmu." />
-            <div className='flex flex-wrap w-full justify-between mt-8'>
+            <div className='flex flex-wrap w-full justify-center mt-8 gap-20'>
                 {cardItems.map((item) => (
                     <CategoryCard key={item.id} item={item} />
                 ))}

@@ -10,7 +10,7 @@ export default function ThemeToggle() {
   );
 
   useEffect(() => {
-    setThemeIcon(theme === "dark" ? <FaMoon className="text-slate-100" /> : <IoMdSunny className="text-slate-100" />);
+    setThemeIcon(theme === "dark" ? <IoMdSunny className="text-slate-100" /> : <FaMoon className="text-slate-100" />);
   }, [theme]);
 
   const handleClick = () => {
