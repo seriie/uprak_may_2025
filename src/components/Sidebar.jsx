@@ -103,7 +103,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             onClick={() => setBtmOpened(!btmOpened)}
             className={`w-full p-2 text-start font-medium ${theme === "dark" ? 'text-slate-100 hover:bg-slate-600' : 'text-slate-800 hover:bg-slate-300'} cursor-pointer rounded-md`}
           >
-            {btmOpened ? "Less" : "More"}
+            {btmOpened ? "Less" : "More"}...
           </button>
           {btmOpened &&
             <div>
