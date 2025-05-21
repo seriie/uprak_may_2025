@@ -1,4 +1,5 @@
 export default function Hero() {
+
     return (
         <>
             <div className="bg-slate-800 p-20 flex flex-wrap-reverse md:flex-nowrap justify-center items-center">

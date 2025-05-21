@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 import Heading from "./Heading";
 import UpdateCard from "./Updates-card";
 import axios from "axios";
@@ -7,6 +8,7 @@ import ReactPaginate from "react-paginate";
 export default function Updates() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const { theme } = useTheme();
   const itemsPerPage = 8;
   const URL = import.meta.env.VITE_API_URL;
 
@@ -49,12 +51,12 @@ export default function Updates() {
           pageCount={pageCount}
           onPageChange={handlePageClick}
           containerClassName="flex gap-2"
-          pageClassName="px-3 py-1 rounded bg-slate-700 text-white"
+          pageClassName={`px-3 py-1 rounded ${theme === "dark" ? 'bg-slate-700 text-slate-100' : 'bg-slate-300 text-slate-800'}`}
           activeClassName="bg-teal-500 font-bold"
           previousLabel={"←"}
           nextLabel={"→"}
-          previousClassName="px-3 py-1 bg-slate-600 text-white rounded"
-          nextClassName="px-3 py-1 bg-slate-600 text-white rounded"
+          previousClassName={`px-3 py-1 ${theme === "dark" ? 'bg-slate-600 text-slate-100' : 'bg-slate-400 text-slate-800'} rounded`}
+          nextClassName={`px-3 py-1 ${theme === "dark" ? 'bg-slate-600 text-slate-100' : 'bg-slate-400 text-slate-800'} rounded`}
           disabledClassName="opacity-50 cursor-not-allowed"
           className="cursor-pointer flex gap-2"
         />

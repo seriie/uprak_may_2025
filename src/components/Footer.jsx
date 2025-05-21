@@ -102,8 +102,8 @@ export default function Footer() {
       <div className="justify-center flex mt-4 flex-col items-center">
         <p className="text-slate-100 text-sm">Ikuti Kami di</p>
         <div className="flex gap-6">
-          {itemIcon.map((item) => (
-            <a className="mt-4 rounded-full focus:outline-teal-500" href={item.link}>
+          {itemIcon.map((item, idx) => (
+            <a key={idx} className="mt-4 rounded-full focus:outline-teal-500" href={item.link}>
               <img
                 src={item.icon}
                 alt={item.name}
