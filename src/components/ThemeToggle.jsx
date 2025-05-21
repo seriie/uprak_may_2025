@@ -24,7 +24,7 @@ export default function ThemeToggle() {
       className={`triggered-hover p-2 rounded-full cursor-pointer ${
         "focus:outline-teal-500"
       } hover:bg-teal-500 ${
-        theme === "dark" ? "bg-teal-600" : "bg-teal-500"
+        theme === "dark" ? "hover:bg-teal-600" : ""
       }`}
     >
       {themeIcon}

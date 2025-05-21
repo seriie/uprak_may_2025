@@ -38,7 +38,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className='flex items-center gap-4'>
-                    <img src={searchIcon} className='w-6 h-6' />
+                    <img src={searchIcon} className='cursor-pointer w-8 h-8 p-1 rounded-full hover:bg-teal-600' />
                     <ThemeToggle />
                     <GrTextAlignLeft onClick={() => setIsOpen(!isOpen)} className='w-6 h-6 text-slate-100 cursor-pointer md:hidden' />
                     <button className='hidden lg:block text-slate-100 p-2 rounded-md focus:outline-teal-300 bg-teal-500 hover:bg-teal-700 cursor-pointer'>Join Newsletter</button>

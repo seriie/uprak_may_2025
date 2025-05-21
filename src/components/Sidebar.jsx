@@ -1,4 +1,5 @@
 import { RxCross2 } from "react-icons/rx";
+import { motion } from "framer-motion";
 import homeIcon from "../assets/icon/navbar/home.png";
 import videoPlayerIcon from "../assets/icon/navbar/video-player.png";
 import pepperIcon from "../assets/icon/navbar/papper.png";
@@ -16,14 +17,12 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   return (
     <>
-      <div
-        className={`
-        fixed top-0 left-0 z-20 h-full w-64 bg-slate-700 p-4
-            ${
-              isOpen
-                ? "translate-x-0 opacity-100 pointer-events-auto"
-                : "-translate-x-full opacity-0 pointer-events-none"
-            }`}
+    <div className={`${isOpen ? 'backdrop-blur-3xl' : 'backdrop-blur-none pointer-events-none'} transition-all duration-200 z-20 absolute flex inset-0 justify-center items-center`}></div>
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: isOpen ? 0 : "-100%" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className={`fixed top-0 left-0 z-20 h-full w-64 bg-slate-700 p-4`}
       >
         <div className="flex justify-between">
           <p className="font-bold text-xl text-slate-100">Menu</p>
@@ -43,7 +42,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
