@@ -7,7 +7,7 @@ export default function Content() {
     
     return (
         <>
-            <div className={`${theme === "dark" ? 'bg-slate-900' : 'bg-slate-100'} p-20`}>
+            <div className={`${theme === "dark" ? 'bg-slate-900' : 'bg-slate-100'} p-4 md:p-20`}>
                 <Category />
                 <Updates />
             </div>
